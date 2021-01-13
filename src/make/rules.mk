@@ -1,4 +1,4 @@
-# MakeT project Makefile
+# ~PROJECT~ project Makefile
 # Rules definition Makefile
 # ==============================================================
 

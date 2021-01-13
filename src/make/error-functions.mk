@@ -1,4 +1,4 @@
-# MakeT project Makefile
+# ~PROJECT~ project Makefile
 # Custom ERROR functions.
 # ==============================================================
 

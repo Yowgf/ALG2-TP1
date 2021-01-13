@@ -25,6 +25,8 @@ F_VAR_EXPANSION    := $(AUX_MAKE_DIR)/var-expansions.mk
 F_RULES            := $(AUX_MAKE_DIR)/rules.mk
 
 # This function is defined here due to its most essential character.
+# The idea is not to use "include" unless you are certain all files
+#   exist.
 define i_check_files =
 	for file_var in $(foreach file, $(1), $($(file))); do
 		if [[ ! -e "$$file_var" ]]; then
@@ -40,21 +42,11 @@ ifneq "$(lastword $(FILE_VAR_STATUS))" "0"
   $(error Essential file "$(word 1, $(FILE_VAR_STATUS))" not found.)
 endif
 
-# Informs custom functions
-include $(F_CUSTOM_FUNCTIONS)
 # Informs global variables
 include $(F_GLOBAL_VARS)
 
-# Checks definition of global variables.
-# Function from inspection-functions file ~i_check_vars~ used here.
-GLOBAL_VAR_STATUS :=  $(shell $(call i_check_vars, $(GLOBAL_VAR_LIST)))
-temp_status := $(lastword $(GLOBAL_VAR_STATUS))
-ifneq "$(temp_status)" "0"
-  $(call e_fatal, $(temp_status) undefined global variables: \
-    $(wordlist 1, $(temp_status), $(GLOBAL_VAR_STATUS)). \
-    Verify file $(F_GLOBAL_VARS))
-endif
-undefine temp_status
+# Informs custom functions
+include $(F_CUSTOM_FUNCTIONS)
 
 # Expands variables
 include $(F_VAR_EXPANSION)

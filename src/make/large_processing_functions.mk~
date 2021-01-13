@@ -1,0 +1,17 @@
+# ~PROJECT~ project makefile
+# Custom LARGE PROCESSING functions
+# Prefix lp_
+#
+# Handy general purpose functions that avoid repetitive code, by
+#   taking a batch of arguments and applying a certain procedure
+#   into it, as opposed to inserting the same code every time
+#   that behaviour is needed.
+# ==============================================================
+
+# Category: Variable handling
+# Description: Applies default value to variables. By default
+#              value, let it be understood DEFAULT_<VAR_NAME>
+# Returns: Nothing
+define lp_apply_default =
+
+endef

@@ -1,42 +1,52 @@
-# MakeT project Makefile
+# ~PROJECT~ project Makefile
 # Global variables custom definitions.
 # ==============================================================
 
-GLOBAL_VAR_LIST := CXX FLAGS HEADER APPLIANCE BUILD \
-  MODULES HEADER_EXTENSION APP_EXTENSION OBJECT_EXTENSION \
-  EXECUTABLE_EXTENSION TARGET
-
-# Compiler flags
-CXX   := g++
-FLAGS := -std=c++11 -Wall
+# Compiler command and flags
+CXX   := 
+FLAGS := 
 
 # Source directory
-SOURCE := src
+SOURCE := 
 
-# ~Source~ descendants
-SOURCE_VAL_NAMES := HEADER APPLIANCE
+# ~SOURCE~ descendants
+# If you want to add more directories as children of ~SOURCE~,
+#   add them to this variable, then add the variable definitions
+#   by themselves.
+# For example:
+# ------------------------------------------------
+# SOURCE_VAL_NAMES := HEADER APPLIANCE THIRD-PARTY
+# HEADER := include
+# APPLIANCE := app
+# THIRD-PARTY := third-party
+# ------------------------------------------------
+SOURCE_VAL_NAMES := 
 # Directory of header files
-HEADER      := header
+HEADER      := 
 # Directory of appliance files (e.g. ~.cpp~)
-APPLIANCE   := appliance
+APPLIANCE   :=
 
 # Directory of compiled files
-BUILD       := build
+BUILD := 
 
 # Project's modules
-MODULES := Containers JPI Utils
+MODULES := 
 
 # Files extensions
-HEADER_EXTENSION     := hpp
-APP_EXTENSION        := cpp
-OBJECT_EXTENSION     := o
-EXECUTABLE_EXTENSION := exe
+HEADER_EXTENSION     := 
+APP_EXTENSION        := 
+OBJECT_EXTENSION     := 
+EXECUTABLE_EXTENSION := 
 
-TARGET := $(BUILD)/Main.exe
+# Leaving these empty will apply the default value
+# Check file var_expansions.mk for details
+MAIN_FILE := 
+TARGET := 
 
 # Regarding tests
-TEST_SCRIPT        := run-tests.sh
-TEST_STEM          := EX
-TEST_IN_EXTENSION  := in
-TEST_OUT_EXTENSION := out
-TEST_NUMBER        := 9
+# These must be manually defined
+TEST_SCRIPT        := 
+TEST_STEM          := 
+TEST_IN_EXTENSION  := 
+TEST_OUT_EXTENSION := 
+TEST_NUMBER        := 

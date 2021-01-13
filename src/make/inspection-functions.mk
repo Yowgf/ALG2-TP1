@@ -1,13 +1,17 @@
-# MakeT project Makefile
-# Custom CHECKING functions.
+# ~PROJECT~ project Makefile
+# Custom INSPECTION functions
+# Prefix i_
+#
+# Functions to automatically perform certain checks commonly
+#   needed throughout the code.
 # ==============================================================
 
-# Category: Variable definition checking.
-# Description: Checks if every variable has been defined.
-# Return: Undefined variable names and status (number of undefined
-#         variables found. If no variable is found to be undefined,
-#         then it simply returns "0".
-# Parameter: List with variable names.
+# Category: Variable definition inspection
+# Description: Inspects if every variable has been defined.
+# Parameter: List with variable names
+# Returns: Undefined variable names and status (number of
+#          undefined variables found). If no variable is found to
+#          be undefined, then it simply returns "0".
 define i_check_vars =
 	let "i = 1";
 	let "status = 0";
