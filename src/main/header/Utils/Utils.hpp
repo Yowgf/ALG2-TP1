@@ -12,5 +12,6 @@
 #define UTILS_H 1
 
 #include "Utils/error.hpp"
+#include "Utils/unit.hpp"
 
 #endif

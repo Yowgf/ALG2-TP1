@@ -25,7 +25,11 @@ public:
   error(const std::exception&, const char*);
   error(const std::exception&, const std::string);
   
-private:  
+private:
+  // Simple auxiliary function. The error code is the most severe
+  // thing error that occurred during the program's execution
+  static void update_error_code(int new_code);
+  
 	// In decreasing order of severity, and in increasing order of error code
 	// Instantly terminates program execution, after
 	//   printing message (should be avoided).

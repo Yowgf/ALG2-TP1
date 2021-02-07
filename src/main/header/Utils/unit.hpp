@@ -9,15 +9,25 @@
 #ifndef UNIT_H
 #define UNIT_H 1
 
+#include "Utils/error.hpp"
+
 #include <exception>
 #include <string>
 #include <typeinfo>
 
 namespace Utils {
 
+#define EQ_TYPE(e1, e2) (typeid(e1) == typeid(e2))
+  
 // Calls CHECK(annotation, stm), with stm being the vality of the fact t_func throws e1
-#define CHECK_THROWS(ann, f, e1, ...) try { (*f)(##__VA_ARGS) }\
-  catch(const std::exception& e2) { Utils::unit::CHECK(ann, typeid(e1) == typeid(e2)) }
+#define CHECK_THROWS(ann, f, e1, ...) try { (*f)(__VA_ARGS__); Utils::unit::CHECK(ann, false); } \
+  catch (const std::exception& e2) { Utils::unit::CHECK(ann, EQ_TYPE(e1, e2)); } \
+  catch (const Utils::graceful_terminate& e2) { Utils::unit::CHECK(ann, EQ_TYPE(e1, e2)); }
+
+#define CHECK_NO_THROW(ann, f, ...) try { (*f)(__VA_ARGS__); \
+    Utils::unit::CHECK(ann, true); }                        \
+  catch (const std::exception& e2) { Utils::unit::CHECK(ann, false); } \
+  catch (const Utils::graceful_terminate& e2) { Utils::unit::CHECK(ann, false); }
   
 class unit_test_failure : public std::exception {
 public:
@@ -35,11 +45,11 @@ private:
 class unit {
 public:
   // Routines useful for unit testing (e.g. check_true, check_throws, etc).
-  void CHECK_TRUE(const std::string annotation, const bool t_stm);
-  void CHECK_FALSE(const std::string annotation, const bool t_stm);
+  static void CHECK_TRUE(const std::string annotation, const bool t_stm);
+  static void CHECK_FALSE(const std::string annotation, const bool t_stm);
   
   // Routines used inside of the class for unit testing
-  void CHECK(const std::string, const bool t_stm);
+  static void CHECK(const std::string, const bool t_stm);
 
 };
   

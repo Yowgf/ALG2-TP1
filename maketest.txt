@@ -1,0 +1,2013 @@
+g++ -std=c++11 -Wall -I src/main/header -c src/main/appliance/Alg/lz78.cpp -o build/main/Alg/lz78.o
+Assembler messages:
+Fatal error: can't create build/main/Alg/lz78.o: No such file or directory
+make: *** [src/main/make/rules.mk:16: build/main/Alg/lz78.o] Error 1
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Sun Feb  7 19:27:57 2021
+
+# Variables
+
+# 'override' directive
+GNUMAKEFLAGS := 
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+PAPERSIZE = letter
+# environment
+DESKTOP_SESSION = ubuntu
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# makefile (from 'src/main/make/var-expansions.mk', line 79)
+APPLIANCE_UNIT_FILES := src/unit/appliance/Alg/lz78_unit.cpp src/unit/appliance/Interface/init_unit.cpp src/unit/appliance/Utils/error_unit.cpp
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+MAIN_FILE = $(APPLIANCE_MAIN)/main.$(APP_EXTENSION)
+# environment
+XDG_SESSION_TYPE = x11
+# default
+CWEAVE = cweave
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+TARGET = $(BUILD)/main.$(EXECUTABLE_EXTENSION)
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# makefile (from 'src/main/make/global-var.mk', line 52)
+TEST_OUT_EXTENSION := 
+# environment
+LINES = 34
+# makefile (from 'src/main/make/var-expansions.mk', line 22)
+DEFAULT_HEADER_MAIN = $(SOURCE_MAIN)/header
+# environment
+COLUMNS = 70
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /run/user/1000/gdm/Xauthority
+# environment
+GDMSESSION = ubuntu
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /home/yowgf/Desktop/ciencia-da-computacao/alg2/exercicios/ALG2-TP1
+# makefile (from 'Makefile', line 16)
+SHELL := /bin/bash
+# default
+RM = rm -f
+# default
+CO = co
+# makefile (from 'src/main/make/inspection-functions.mk', line 15)
+define i_check_vars
+	let "i = 1";
+	let "status = 0";
+	declare -a undefined_vars;
+	
+	for var in $(foreach provided_var, $(1), "$($(provided_var))"); do
+		if [[ "$$var" = "" ]]; then
+			(( undefined_vars[$$status] = ($$i-1) ));
+			(( status += 1 ));
+		fi;
+		(( i+=1 )) ;
+	done;
+	
+	declare -a temp_provided_vars=($(1));
+	for (( i=0; (( $$i < $$status )); (( i+=1 )) )); do
+		undefined_vars[$$i]=$${temp_provided_vars[$${undefined_vars[$$i]}]};
+	done;
+	
+	echo "$${undefined_vars[@]}";
+	echo "$$status";
+	exit "$$status";
+endef
+# environment
+JOURNAL_STREAM = 8:36835
+# default
+PREPROCESS.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -F
+# makefile (from 'src/main/make/var-expansions.mk', line 30)
+DEFAULT_BUILD_UNIT = $(BUILD)/unit
+# default
+LINK.m = $(OBJC) $(OBJCFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
+# default
+OUTPUT_OPTION = -o $@
+# makefile (from 'src/main/make/var-expansions.mk', line 106)
+UNIT_TARGET_DEPENDENCIES := src/unit/appliance/unit_main.cpp src/unit/header/Alg/Alg_unit.hpp src/unit/header/Alg/lz78_unit.hpp src/unit/header/Interface/Interface_unit.hpp src/unit/header/Interface/init_unit.hpp src/unit/header/Utils/Utils_unit.hpp src/unit/header/Utils/error_unit.hpp src/unit/appliance/Alg/lz78_unit.cpp src/unit/appliance/Interface/init_unit.cpp src/unit/appliance/Utils/error_unit.cpp src/main/header/Alg/lz78.hpp src/main/header/Alg/Alg.hpp src/main/header/Interface/process_entries.hpp src/main/header/Interface/Interface.hpp src/main/header/Interface/init.hpp src/main/header/Utils/Utils.hpp src/main/header/Utils/error.hpp src/main/header/Utils/unit.hpp src/main/appliance/Alg/lz78.cpp src/main/appliance/Interface/init.cpp src/main/appliance/Utils/error.cpp src/main/appliance/Utils/unit.cpp  build/unit/Alg  build/unit/Interface  build/unit/Utils  build/main/Alg/lz78.o  build/main/Interface/init.o  build/main/Utils/error.o  build/main/Utils/unit.o  build/unit/Alg/lz78_unit.o  build/unit/Interface/init_unit.o  build/unit/Utils/error_unit.o
+# default
+COMPILE.cpp = $(COMPILE.cc)
+# makefile (from 'src/main/make/rules.mk', line 1)
+MAKEFILE_LIST :=  Makefile src/main/make/global-var.mk src/main/make/custom-functions.mk src/main/make/error-functions.mk src/main/make/inspection-functions.mk src/main/make/large-processing-functions.mk src/main/make/var-expansions.mk src/main/make/rules.mk
+# automatic
+@F = $(notdir $@)
+# makefile (from 'src/main/make/var-expansions.mk', line 94)
+UNIT_LINK_CODE = $(CXX) $(FLAGS) -I $(HEADER_MAIN) -I $(HEADER_UNIT) $(OBJECT_MAIN_FILES) $(OBJECT_UNIT_FILES) $(UNIT_MAIN_FILE) -o $(UNIT_TARGET)
+# environment
+IM_CONFIG_PHASE = 1
+# makefile (from 'src/main/make/var-expansions.mk', line 32)
+DEFAULT_MODULES := 
+# environment
+USERNAME = yowgf
+# default
+LINK.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# makefile (from 'src/main/make/var-expansions.mk', line 25)
+DEFAULT_APPLIANCE_UNIT = $(SOURCE_UNIT)/appliance
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+EXECUTABLE_EXTENSION = exe
+# environment
+MAKELEVEL := 0
+# environment
+MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
+# environment
+XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
+# makefile (from 'src/main/make/var-expansions.mk', line 91)
+LINK_CODE = $(CXX) $(FLAGS) -I $(HEADER_MAIN) $(OBJECT_MAIN_FILES) $(MAIN_FILE) -o $@
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+UNIT_MAIN_FILE = $(APPLIANCE_UNIT)/unit_main.cpp
+# default
+CC = cc
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+APPLIANCE_UNIT = $(SOURCE_UNIT)/appliance
+# environment
+_ = /usr/bin/dbus-update-activation-environment
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+HEADER_EXTENSION = hpp
+# makefile (from 'src/main/make/global-var.mk', line 50)
+TEST_STEM := 
+# default
+CHECKOUT,v = +$(if $(wildcard $@),,$(CO) $(COFLAGS) $< $@)
+# environment
+MANAGERPID = 1063
+# environment
+LC_NAME = en_US.UTF-8
+# default
+CPP = $(CC) -E
+# default
+LINK.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+# makefile (from 'src/main/make/var-expansions.mk', line 83)
+OBJECT_UNIT_FILES :=  build/unit/Alg/lz78_unit.o  build/unit/Interface/init_unit.o  build/unit/Utils/error_unit.o
+# default
+LD = ld
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+SOURCE_MAIN = $(SOURCE)/main
+# default
+TEXI2DVI = texi2dvi
+# makefile (from 'Makefile', line 22)
+F_CUSTOM_FUNCTIONS := src/main/make/custom-functions.mk
+# environment
+GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
+# default
+YACC = yacc
+# environment
+SESSION_MANAGER = local/alex-laptop:@/tmp/.ICE-unix/1389,unix/alex-laptop:/tmp/.ICE-unix/1389
+# default
+COMPILE.mod = $(M2C) $(M2FLAGS) $(MODFLAGS) $(TARGET_ARCH)
+# environment
+XDG_RUNTIME_DIR = /run/user/1000
+# default
+ARFLAGS = rv
+# default
+LINK.r = $(FC) $(FFLAGS) $(RFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+LINT = lint
+# default
+COMPILE.f = $(FC) $(FFLAGS) $(TARGET_ARCH) -c
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+UNIT_TARGET = $(BUILD)/unit_main.exe
+# default
+LINT.c = $(LINT) $(LINTFLAGS) $(CPPFLAGS) $(TARGET_ARCH)
+# default
+YACC.m = $(YACC) $(YFLAGS)
+# makefile (from 'src/main/make/global-var.mk', line 53)
+TEST_NUMBER := 
+# default
+YACC.y = $(YACC) $(YFLAGS)
+# makefile (from 'src/main/make/var-expansions.mk', line 40)
+DEFAULT_TARGET = $(BUILD)/main.$(EXECUTABLE_EXTENSION)
+# default
+AR = ar
+# environment
+XDG_MENU_PREFIX = gnome-
+# makefile (from 'src/main/make/custom-functions.mk', line 5)
+F_ERROR_FUNCTIONS := src/main/make/error-functions.mk
+# environment
+LC_NUMERIC = en_US.UTF-8
+# environment
+INVOCATION_ID = f3c77bc3ef324db18a1e62a71a63ec9f
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# makefile (from 'src/main/make/large-processing-functions.mk', line 20)
+lp_apply_defaults = $(eval $(foreach var, $(1), ifndef $(var)$(newline)$(var) = $(value DEFAULT_$(var))$(newline)endif$(newline)))
+# makefile (from 'src/main/make/global-var.mk', line 31)
+MODULES := Alg Interface Utils
+# default
+TANGLE = tangle
+# makefile (from 'src/main/make/global-var.mk', line 51)
+TEST_IN_EXTENSION := 
+# makefile (from 'src/main/make/var-expansions.mk', line 14)
+DEFAULT_CXX := g++
+# environment
+XDG_SESSION_DESKTOP = ubuntu
+# environment
+SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 11228
+# makefile (from 'src/main/make/var-expansions.mk', line 74)
+HEADER_MAIN_FILES := src/main/header/Alg/lz78.hpp src/main/header/Alg/Alg.hpp src/main/header/Interface/process_entries.hpp src/main/header/Interface/Interface.hpp src/main/header/Interface/init.hpp src/main/header/Utils/Utils.hpp src/main/header/Utils/error.hpp src/main/header/Utils/unit.hpp
+# default
+GET = get
+# automatic
+%F = $(notdir $%)
+# makefile (from 'src/main/make/var-expansions.mk', line 51)
+GLOBAL_VAR_STATUS :=  0
+# environment
+DISPLAY = :0
+# default
+COMPILE.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+CTANGLE = ctangle
+# makefile (from 'src/main/make/var-expansions.mk', line 36)
+DEFAULT_OBJECT_EXTENSION := o
+# environment
+HOME = /home/yowgf
+# default
+.LIBPATTERNS = lib%.so lib%.a
+# default
+LINK.C = $(LINK.cc)
+# environment
+PWD = /home/yowgf/Desktop/ciencia-da-computacao/alg2/exercicios/ALG2-TP1
+# makefile (from 'src/main/make/var-expansions.mk', line 43)
+DEFAULT_UNIT_TARGET = $(BUILD)/unit_main.exe
+# default
+.LOADED := 
+# default
+LINK.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_MACH)
+# default
+PREPROCESS.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -F
+# environment
+SSH_AGENT_PID = 1347
+# makefile (from 'src/main/make/var-expansions.mk', line 61)
+C_SP = $(subst ,, )
+# default
+LINK.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# environment
+GTK_MODULES = gail:atk-bridge
+# default
+LINK.s = $(CC) $(ASFLAGS) $(LDFLAGS) $(TARGET_MACH)
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+BUILD_MAIN = $(BUILD)/main
+# makefile (from 'src/main/make/var-expansions.mk', line 17)
+DEFAULT_SOURCE := src
+# makefile (from 'src/main/make/var-expansions.mk', line 104)
+TARGET_DEPENDENCIES := src/main/appliance/main.cpp src/main/header/Alg/lz78.hpp src/main/header/Alg/Alg.hpp src/main/header/Interface/process_entries.hpp src/main/header/Interface/Interface.hpp src/main/header/Interface/init.hpp src/main/header/Utils/Utils.hpp src/main/header/Utils/error.hpp src/main/header/Utils/unit.hpp src/main/appliance/Alg/lz78.cpp src/main/appliance/Interface/init.cpp src/main/appliance/Utils/error.cpp src/main/appliance/Utils/unit.cpp  build/main/Alg  build/main/Interface  build/main/Utils  build/main/Alg/lz78.o  build/main/Interface/init.o  build/main/Utils/error.o  build/main/Utils/unit.o
+# environment
+LOGNAME = yowgf
+# automatic
++F = $(notdir $+)
+# makefile (from 'src/main/make/global-var.mk', line 49)
+TEST_SCRIPT := 
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+HEADER_MAIN = $(SOURCE_MAIN)/header
+# makefile (from 'src/main/make/var-expansions.mk', line 35)
+DEFAULT_APP_EXTENSION := cpp
+# makefile (from 'src/main/make/var-expansions.mk', line 24)
+DEFAULT_HEADER_UNIT = $(SOURCE_UNIT)/header
+# environment
+GNOME_DESKTOP_SESSION_ID = this-is-deprecated
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+APP_EXTENSION = cpp
+# environment
+LC_TIME = en_US.UTF-8
+# default
+COMPILE.m = $(OBJC) $(OBJCFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := unit
+# environment
+QT_IM_MODULE = ibus
+# makefile (from 'src/main/make/var-expansions.mk', line 76)
+APPLIANCE_MAIN_FILES := src/main/appliance/Alg/lz78.cpp src/main/appliance/Interface/init.cpp src/main/appliance/Utils/error.cpp src/main/appliance/Utils/unit.cpp
+# environment
+SHLVL = 0
+# makefile (from 'src/main/make/var-expansions.mk', line 93)
+COMPIL_OBJECT_CODE_UNIT = $(CXX) $(FLAGS) -I $(HEADER_MAIN) -I $(HEADER_UNIT) -c $< -o $@
+# default
+AS = as
+# default
+PREPROCESS.S = $(CC) -E $(CPPFLAGS)
+# environment
+GNOME_SHELL_SESSION_MODE = ubuntu
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+SOURCE = src
+# default
+COMPILE.p = $(PC) $(PFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# default
+MAKE_VERSION := 4.2.1
+# environment
+USER = yowgf
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+OBJECT_EXTENSION = o
+# default
+FC = f77
+# environment
+LC_MONETARY = en_US.UTF-8
+# makefile
+.DEFAULT_GOAL := build/main.exe
+# makefile (from 'Makefile', line 24)
+F_VAR_EXPANSION := src/main/make/var-expansions.mk
+# environment
+XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# makefile (from 'Makefile', line 21)
+AUX_MAKE_DIR := src/main/make
+# makefile (from 'src/main/make/var-expansions.mk', line 15)
+DEFAULT_FLAGS := -std=c++11 -Wall
+# makefile (from 'src/main/make/var-expansions.mk', line 29)
+DEFAULT_BUILD_MAIN = $(BUILD)/main
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+LC_TELEPHONE = en_US.UTF-8
+# makefile (from 'src/main/make/var-expansions.mk', line 89)
+COMPIL_OBJECT_CODE_MAIN = $(CXX) $(FLAGS) -I $(HEADER_MAIN) -c $< -o $@
+# makefile (from 'Makefile', line 23)
+F_GLOBAL_VARS := src/main/make/global-var.mk
+# default
+WEAVE = weave
+# default
+MAKE_COMMAND := /usr/bin/make
+# default
+LINK.cpp = $(LINK.cc)
+# default
+F77 = $(FC)
+# environment
+OLDPWD = /home/yowgf/Desktop/ciencia-da-computacao/alg2/exercicios
+# makefile (from 'src/main/make/var-expansions.mk', line 66)
+C_NL := $(subst ,,
+)
+# default
+.VARIABLES := 
+# default
+PC = pc
+# makefile (from 'src/main/make/var-expansions.mk', line 23)
+DEFAULT_APPLIANCE_MAIN = $(SOURCE_MAIN)/appliance
+# automatic
+*F = $(notdir $*)
+# environment
+LANGUAGE = en_US:en
+# makefile (from 'src/main/make/var-expansions.mk', line 86)
+OBJECT_DIRS := build/main build/unit
+# default
+COMPILE.def = $(M2C) $(M2FLAGS) $(DEFFLAGS) $(TARGET_ARCH)
+# makefile (from 'src/main/make/var-expansions.mk', line 102)
+BUILD_MODS_UNIT :=  build/unit/Alg  build/unit/Interface  build/unit/Utils
+# default
+LEX = lex
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+APPLIANCE_MAIN = $(SOURCE_MAIN)/appliance
+# makefile
+MAKEFLAGS = p
+# environment
+MFLAGS = -p
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+SOURCE_UNIT = $(SOURCE)/unit
+# default
+LEX.l = $(LEX) $(LFLAGS) -t
+# default
+LEX.m = $(LEX) $(LFLAGS) -t
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# default
+COMPILE.r = $(FC) $(FFLAGS) $(RFLAGS) $(TARGET_ARCH) -c
+# makefile (from 'src/main/make/var-expansions.mk', line 34)
+DEFAULT_HEADER_EXTENSION := hpp
+# makefile (from 'Makefile', line 30)
+define i_check_files
+	for file_var in $(foreach file, $(1), $($(file))); do
+		if [[ ! -e "$$file_var" ]]; then
+			echo "$$file_var 1";
+			exit 1;
+		fi
+	done;
+	echo 0
+endef
+# makefile (from 'src/main/make/var-expansions.mk', line 7)
+GLOBAL_VAR_LIST := CXX FLAGS SOURCE SOURCE_MAIN SOURCE_UNIT HEADER_MAIN APPLIANCE_MAIN HEADER_UNIT APPLIANCE_UNIT BUILD BUILD_MAIN BUILD_UNIT MODULES HEADER_EXTENSION APP_EXTENSION OBJECT_EXTENSION EXECUTABLE_EXTENSION MAIN_FILE TARGET UNIT_MAIN_FILE UNIT_TARGET
+# makefile (from 'src/main/make/custom-functions.mk', line 6)
+F_INSPECTION_FUNCTIONS := src/main/make/inspection-functions.mk
+# default
+MAKE_TERMOUT := /dev/pts/0
+# environment
+LC_PAPER = en_US.UTF-8
+# default
+M2C = m2c
+# environment
+LC_IDENTIFICATION = en_US.UTF-8
+# environment
+QT_ACCESSIBILITY = 1
+# makefile (from 'src/main/make/error-functions.mk', line 9)
+e_undef_var =   $(error Variable(s) "$(1)" left undefined, please check variable definition file)
+# environment
+DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
+# makefile (from 'src/main/make/var-expansions.mk', line 82)
+OBJECT_MAIN_FILES :=  build/main/Alg/lz78.o  build/main/Interface/init.o  build/main/Utils/error.o  build/main/Utils/unit.o
+# makefile (from 'src/main/make/var-expansions.mk', line 19)
+DEFAULT_SOURCE_MAIN = $(SOURCE)/main
+# makefile (from 'Makefile', line 40)
+FILE_VAR_STATUS := 0
+# 'override' directive
+.SHELLSTATUS := 0
+# default
+MAKEFILES := 
+# default
+COMPILE.cc = $(CXX) $(CXXFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+BUILD = build
+# makefile (from 'src/main/make/var-expansions.mk', line 20)
+DEFAULT_SOURCE_UNIT = $(SOURCE)/unit
+# automatic
+<F = $(notdir $<)
+# makefile (from 'src/main/make/var-expansions.mk', line 39)
+DEFAULT_MAIN_FILE = $(APPLIANCE_MAIN)/main.$(APP_EXTENSION)
+# makefile (from 'src/main/make/large-processing-functions.mk', line 16)
+define newline
+
+
+endef
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+CXX = g++
+# makefile (from 'src/main/make/var-expansions.mk', line 78)
+HEADER_UNIT_FILES := src/unit/header/Alg/Alg_unit.hpp src/unit/header/Alg/lz78_unit.hpp src/unit/header/Interface/Interface_unit.hpp src/unit/header/Interface/init_unit.hpp src/unit/header/Utils/Utils_unit.hpp src/unit/header/Utils/error_unit.hpp
+# environment
+LC_MEASUREMENT = en_US.UTF-8
+# makefile (from 'src/main/make/var-expansions.mk', line 42)
+DEFAULT_UNIT_MAIN_FILE = $(APPLIANCE_UNIT)/unit_main.cpp
+# default
+COFLAGS = 
+# makefile (from 'src/main/make/var-expansions.mk', line 99)
+OBJECT_MOD_DIRS :=    build/main/Alg   build/unit/Alg    build/main/Interface   build/unit/Interface    build/main/Utils   build/unit/Utils
+# default
+COMPILE.C = $(COMPILE.cc)
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
+# automatic
+^F = $(notdir $^)
+# default
+COMPILE.S = $(CC) $(ASFLAGS) $(CPPFLAGS) $(TARGET_MACH) -c
+# default
+LINK.F = $(FC) $(FFLAGS) $(CPPFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# makefile (from 'src/main/make/custom-functions.mk', line 7)
+F_LARGE_PROCESSING_FUNCTIONS := src/main/make/large-processing-functions.mk
+# default
+SUFFIXES := .out .a .ln .o .c .cc .C .cpp .p .f .F .m .r .y .l .ym .yl .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el
+# default
+COMPILE.c = $(CC) $(CFLAGS) $(CPPFLAGS) $(TARGET_ARCH) -c
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+FLAGS = -std=c++11 -Wall
+# makefile (from 'src/main/make/var-expansions.mk', line 101)
+BUILD_MODS_MAIN :=  build/main/Alg  build/main/Interface  build/main/Utils
+# makefile (from 'src/main/make/var-expansions.mk', line 37)
+DEFAULT_EXECUTABLE_EXTENSION := exe
+# environment
+WINDOWPATH = 2
+# default
+COMPILE.s = $(AS) $(ASFLAGS) $(TARGET_MACH)
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# makefile (from 'Makefile', line 19)
+ALL_FILES_VARS := F_CUSTOM_FUNCTIONS F_GLOBAL_VARS F_VAR_EXPANSION F_RULES
+# environment
+GJS_DEBUG_OUTPUT = stderr
+# makefile (from 'Makefile', line 25)
+F_RULES := src/main/make/rules.mk
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+BUILD_UNIT = $(BUILD)/unit
+# default
+.RECIPEPREFIX := 
+# default
+MAKEINFO = makeinfo
+# makefile (from 'src/main/make/error-functions.mk', line 25)
+e_prev_cmd = 	{ let "status = $$?"; echo $(1); echo Shell exit status: $$status; exit $$status; }
+# default
+MAKE_TERMERR := /dev/pts/0
+# default
+OBJC = cc
+# environment
+LC_ADDRESS = en_US.UTF-8
+# default
+LINK.f = $(FC) $(FFLAGS) $(LDFLAGS) $(TARGET_ARCH)
+# default
+TEX = tex
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/emacs.desktop
+# environment
+LANG = en_US.UTF-8
+# environment
+TERM = dumb
+# default
+F77FLAGS = $(FFLAGS)
+# default
+LINK.o = $(CC) $(LDFLAGS) $(TARGET_ARCH)
+# makefile (from 'src/main/make/var-expansions.mk', line 27)
+DEFAULT_BUILD := build
+# makefile (from 'src/main/make/error-functions.mk', line 16)
+e_fatal = 	$(error $(1));
+# makefile (from 'src/main/make/var-expansions.mk', line 47)
+HEADER_UNIT = $(SOURCE_UNIT)/header
+# variable set hash-table stats:
+# Load=242/1024=24%, Rehash=0, Collisions=121/623=19%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# src/unit/appliance (device 2053, inode 3803134): No files, no impossibilities so far.
+# src/main/appliance/Utils (device 2053, inode 3154749): 5 files, no impossibilities.
+# src/main/appliance/Interface (device 2053, inode 3801295): 4 files, no impossibilities.
+# SCCS: could not be stat'd.
+# src/main/header/Utils (device 2053, inode 3154751): 6 files, no impossibilities.
+# src/unit/header (device 2053, inode 3278358): No files, no impossibilities so far.
+# . (device 2053, inode 2770107): 14 files, no impossibilities.
+# src/main/header/Interface (device 2053, inode 3286856): 7 files, no impossibilities.
+# src/unit/appliance/Alg (device 2053, inode 3278202): 3 files, no impossibilities.
+# src/main/appliance (device 2053, inode 3154307): No files, no impossibilities so far.
+# src/unit/header/Alg (device 2053, inode 3803135): 5 files, no impossibilities.
+# src/main/header (device 2053, inode 3154306): No files, no impossibilities so far.
+# src/unit/appliance/Utils (device 2053, inode 3278203): 4 files, no impossibilities.
+# src/unit/appliance/Interface (device 2053, inode 3278204): 4 files, no impossibilities.
+# src/unit/header/Utils (device 2053, inode 3804062): 5 files, no impossibilities.
+# src/unit/header/Interface (device 2053, inode 3803538): 6 files, no impossibilities.
+# src/main/appliance/Alg (device 2053, inode 3801633): 4 files, no impossibilities.
+# src/main/header/Alg (device 2053, inode 3804050): 6 files, no impossibilities.
+# RCS: could not be stat'd.
+
+# 73 files, no impossibilities in 19 directories.
+
+# Implicit Rules
+
+build/main/%o:: src/main/appliance/%cpp src/main/header/%hpp
+#  recipe to execute (from 'src/main/make/rules.mk', line 16):
+	$(COMPIL_OBJECT_CODE_MAIN)
+
+build/unit/%o:: src/unit/appliance/%cpp src/unit/header/%hpp
+#  recipe to execute (from 'src/main/make/rules.mk', line 19):
+	$(COMPIL_OBJECT_CODE_UNIT)
+
+%::
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+%.out:
+
+%.a:
+
+%.ln:
+
+%.o:
+
+%: %.o
+#  recipe to execute (built-in):
+	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.c:
+
+%: %.c
+#  recipe to execute (built-in):
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.ln: %.c
+#  recipe to execute (built-in):
+	$(LINT.c) -C$* $<
+
+%.o: %.c
+#  recipe to execute (built-in):
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+
+%.cc:
+
+%: %.cc
+#  recipe to execute (built-in):
+	$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.cc
+#  recipe to execute (built-in):
+	$(COMPILE.cc) $(OUTPUT_OPTION) $<
+
+%.C:
+
+%: %.C
+#  recipe to execute (built-in):
+	$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.C
+#  recipe to execute (built-in):
+	$(COMPILE.C) $(OUTPUT_OPTION) $<
+
+%.cpp:
+
+%: %.cpp
+#  recipe to execute (built-in):
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.cpp
+#  recipe to execute (built-in):
+	$(COMPILE.cpp) $(OUTPUT_OPTION) $<
+
+%.p:
+
+%: %.p
+#  recipe to execute (built-in):
+	$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.p
+#  recipe to execute (built-in):
+	$(COMPILE.p) $(OUTPUT_OPTION) $<
+
+%.f:
+
+%: %.f
+#  recipe to execute (built-in):
+	$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.f
+#  recipe to execute (built-in):
+	$(COMPILE.f) $(OUTPUT_OPTION) $<
+
+%.F:
+
+%: %.F
+#  recipe to execute (built-in):
+	$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.F
+#  recipe to execute (built-in):
+	$(COMPILE.F) $(OUTPUT_OPTION) $<
+
+%.f: %.F
+#  recipe to execute (built-in):
+	$(PREPROCESS.F) $(OUTPUT_OPTION) $<
+
+%.m:
+
+%: %.m
+#  recipe to execute (built-in):
+	$(LINK.m) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.m
+#  recipe to execute (built-in):
+	$(COMPILE.m) $(OUTPUT_OPTION) $<
+
+%.r:
+
+%: %.r
+#  recipe to execute (built-in):
+	$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.r
+#  recipe to execute (built-in):
+	$(COMPILE.r) $(OUTPUT_OPTION) $<
+
+%.f: %.r
+#  recipe to execute (built-in):
+	$(PREPROCESS.r) $(OUTPUT_OPTION) $<
+
+%.y:
+
+%.ln: %.y
+#  recipe to execute (built-in):
+	$(YACC.y) $< 
+	 $(LINT.c) -C$* y.tab.c 
+	 $(RM) y.tab.c
+
+%.c: %.y
+#  recipe to execute (built-in):
+	$(YACC.y) $< 
+	 mv -f y.tab.c $@
+
+%.l:
+
+%.ln: %.l
+#  recipe to execute (built-in):
+	@$(RM) $*.c
+	 $(LEX.l) $< > $*.c
+	$(LINT.c) -i $*.c -o $@
+	 $(RM) $*.c
+
+%.c: %.l
+#  recipe to execute (built-in):
+	@$(RM) $@ 
+	 $(LEX.l) $< > $@
+
+%.r: %.l
+#  recipe to execute (built-in):
+	$(LEX.l) $< > $@ 
+	 mv -f lex.yy.r $@
+
+%.ym:
+
+%.m: %.ym
+#  recipe to execute (built-in):
+	$(YACC.m) $< 
+	 mv -f y.tab.c $@
+
+%.yl:
+
+%.s:
+
+%: %.s
+#  recipe to execute (built-in):
+	$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.s
+#  recipe to execute (built-in):
+	$(COMPILE.s) -o $@ $<
+
+%.S:
+
+%: %.S
+#  recipe to execute (built-in):
+	$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+%.o: %.S
+#  recipe to execute (built-in):
+	$(COMPILE.S) -o $@ $<
+
+%.s: %.S
+#  recipe to execute (built-in):
+	$(PREPROCESS.S) $< > $@
+
+%.mod:
+
+%: %.mod
+#  recipe to execute (built-in):
+	$(COMPILE.mod) -o $@ -e $@ $^
+
+%.o: %.mod
+#  recipe to execute (built-in):
+	$(COMPILE.mod) -o $@ $<
+
+%.sym:
+
+%.def:
+
+%.sym: %.def
+#  recipe to execute (built-in):
+	$(COMPILE.def) -o $@ $<
+
+%.h:
+
+%.info:
+
+%.dvi:
+
+%.tex:
+
+%.dvi: %.tex
+#  recipe to execute (built-in):
+	$(TEX) $<
+
+%.texinfo:
+
+%.info: %.texinfo
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.texinfo
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.texi:
+
+%.info: %.texi
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.texi
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.txinfo:
+
+%.info: %.txinfo
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+%.dvi: %.txinfo
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+%.w:
+
+%.c: %.w
+#  recipe to execute (built-in):
+	$(CTANGLE) $< - $@
+
+%.tex: %.w
+#  recipe to execute (built-in):
+	$(CWEAVE) $< - $@
+
+%.ch:
+
+%.web:
+
+%.p: %.web
+#  recipe to execute (built-in):
+	$(TANGLE) $<
+
+%.tex: %.web
+#  recipe to execute (built-in):
+	$(WEAVE) $<
+
+%.sh:
+
+%: %.sh
+#  recipe to execute (built-in):
+	cat $< >$@ 
+	 chmod a+x $@
+
+%.elc:
+
+%.el:
+
+(%): %
+#  recipe to execute (built-in):
+	$(AR) $(ARFLAGS) $@ $<
+
+%.out: %
+#  recipe to execute (built-in):
+	@rm -f $@ 
+	 cp $< $@
+
+%.c: %.w %.ch
+#  recipe to execute (built-in):
+	$(CTANGLE) $^ $@
+
+%.tex: %.w %.ch
+#  recipe to execute (built-in):
+	$(CWEAVE) $^ $@
+
+%:: %,v
+#  recipe to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: RCS/%,v
+#  recipe to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: RCS/%
+#  recipe to execute (built-in):
+	$(CHECKOUT,v)
+
+%:: s.%
+#  recipe to execute (built-in):
+	$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<
+
+%:: SCCS/s.%
+#  recipe to execute (built-in):
+	$(GET) $(GFLAGS) $(SCCS_OUTPUT_OPTION) $<
+
+# 95 implicit rules, 8 (8.4%) terminal.
+
+# Files
+
+build/unit/Alg::
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  Last modified 2021-02-07 19:26:02.676410468
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := build/unit/Alg
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
+#  recipe to execute (from 'src/main/make/rules.mk', line 12):
+	@-mkdir --parents $@
+
+# Not a target:
+.web.p:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TANGLE) $<
+
+# Not a target:
+.l.r:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LEX.l) $< > $@ 
+	 mv -f lex.yy.r $@
+
+# Not a target:
+.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.ym:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.f.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.f) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.l:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.m:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.m) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.ln:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.o) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+build/unit/Utils::
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  Last modified 2021-02-07 19:26:02.688410688
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := build/unit/Utils
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
+#  recipe to execute (from 'src/main/make/rules.mk', line 12):
+	@-mkdir --parents $@
+
+# Not a target:
+.y:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.def.sym:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.def) -o $@ $<
+
+.PHONY: clean unit test
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+src/main/make/custom-functions.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/make/custom-functions.mk'
+#  Last modified 2021-01-18 23:14:13.00505238
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+.p.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.p) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.p:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.p) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.txinfo.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+.a:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.yl:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.l.ln:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	@$(RM) $*.c
+	 $(LEX.l) $< > $*.c
+	$(LINT.c) -i $*.c -o $@
+	 $(RM) $*.c
+
+# Not a target:
+.F.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.F) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.texi.info:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+.w.c:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(CTANGLE) $< - $@
+
+# Not a target:
+.texi.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+.ch:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.m.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.m) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.cc:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.cc) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.cc.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.cc) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.def:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.SUFFIXES: .out .a .ln .o .c .cc .C .cpp .p .f .F .m .r .y .l .ym .yl .s .S .mod .sym .def .h .info .dvi .tex .texinfo .texi .txinfo .w .ch .web .sh .elc .el
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.c.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+
+Makefile:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Makefile'
+#  Last modified 2021-02-06 23:18:14.278169929
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+src/main/make/inspection-functions.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/make/inspection-functions.mk'
+#  Last modified 2021-01-18 23:14:07.141159152
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+.r.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.r) $(OUTPUT_OPTION) $<
+
+src/main/header/Alg/Alg.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/header/Alg/Alg.hpp'
+#  Last modified 2021-02-06 16:30:56.856826344
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+.r:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.r) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+src/unit/header/Alg/Alg_unit.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/unit/header/Alg/Alg_unit.hpp'
+#  Last modified 2021-02-07 15:51:24.697904169
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+test::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 53):
+	$(MAKE)
+	@bash $(TEST_SCRIPT) $(TEST_STEM) $(TEST_IN_EXTENSION) $(TEST_OUT_EXTENSION) $(TEST_NUMBER)
+
+# Not a target:
+.ym.m:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(YACC.m) $< 
+	 mv -f y.tab.c $@
+
+# Not a target:
+.y.ln:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(YACC.y) $< 
+	 $(LINT.c) -C$* y.tab.c 
+	 $(RM) y.tab.c
+
+# Not a target:
+.elc:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+src/main/make/var-expansions.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/make/var-expansions.mk'
+#  Last modified 2021-02-07 16:40:49.361511549
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+.l.c:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	@$(RM) $@ 
+	 $(LEX.l) $< > $@
+
+src/main/header/Utils/Utils.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/header/Utils/Utils.hpp'
+#  Last modified 2021-02-07 16:55:29.127802122
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+src/unit/header/Utils/Utils_unit.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/unit/header/Utils/Utils_unit.hpp'
+#  Last modified 2021-02-07 15:52:58.432499924
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+src/unit/appliance/unit_main.cpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/unit/appliance/unit_main.cpp'
+#  Last modified 2021-02-07 17:47:11.358770899
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+.out:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+src/main/make/large-processing-functions.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/make/large-processing-functions.mk'
+#  Last modified 2021-02-06 23:54:52.912651443
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+.C:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.C) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.r.f:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(PREPROCESS.r) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.S:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.S) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.texinfo.info:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+# Not a target:
+build/main/Utils/error.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.c:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.c) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+build/unit/Utils/error_unit.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.w.tex:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(CWEAVE) $< - $@
+
+# Not a target:
+.c.ln:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINT.c) -C$* $<
+
+# Not a target:
+.s.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.s) -o $@ $<
+
+# Not a target:
+.s:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.s) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+build/main/Interface::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 12):
+	@-mkdir --parents $@
+
+src/main/header/Utils/error.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/header/Utils/error.hpp'
+#  Last modified 2021-02-07 18:35:47.560255168
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+src/unit/header/Utils/error_unit.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/unit/header/Utils/error_unit.hpp'
+#  Last modified 2021-02-07 11:37:23.564018
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+build/main.exe: src/main/appliance/main.cpp src/main/header/Alg/lz78.hpp src/main/header/Alg/Alg.hpp src/main/header/Interface/process_entries.hpp src/main/header/Interface/Interface.hpp src/main/header/Interface/init.hpp src/main/header/Utils/Utils.hpp src/main/header/Utils/error.hpp src/main/header/Utils/unit.hpp src/main/appliance/Alg/lz78.cpp src/main/appliance/Interface/init.cpp src/main/appliance/Utils/error.cpp src/main/appliance/Utils/unit.cpp build/main/Alg build/main/Interface build/main/Utils build/main/Alg/lz78.o build/main/Interface/init.o build/main/Utils/error.o build/main/Utils/unit.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 7):
+	$(info Linking code...)
+	$(LINK_CODE)
+
+# Not a target:
+.texinfo.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TEXI2DVI) $(TEXI2DVI_FLAGS) $<
+
+# Not a target:
+.el:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.lm.m:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	@$(RM) $@ 
+	 $(LEX.m) $< > $@
+
+# Not a target:
+.y.c:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(YACC.y) $< 
+	 mv -f y.tab.c $@
+
+src/unit/appliance/Utils/error_unit.cpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/unit/appliance/Utils/error_unit.cpp'
+#  Last modified 2021-02-07 11:37:23.564018239
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+.web.tex:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(WEAVE) $<
+
+# Not a target:
+.texinfo:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.h:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+src/main/make/rules.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/make/rules.mk'
+#  Last modified 2021-02-07 16:02:10.272405781
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+build/main/Interface/init.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+build/unit/Interface/init_unit.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+src/main/make/global-var.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/make/global-var.mk'
+#  Last modified 2021-02-07 15:24:35.218442657
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+build/main/Alg::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 12):
+	@-mkdir --parents $@
+
+src/main/header/Interface/init.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/header/Interface/init.hpp'
+#  Last modified 2021-02-06 21:29:21.541966307
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+build/main/Alg/lz78.o: src/main/appliance/Alg/lz78.cpp src/main/header/Alg/lz78.hpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'Alg/lz78.'
+#  Modification time never checked.
+#  File has been updated.
+#  Failed to be updated.
+# automatic
+# @ := build/main/Alg/lz78.o
+# automatic
+# % := 
+# automatic
+# * := Alg/lz78.
+# automatic
+# + := src/main/appliance/Alg/lz78.cpp src/main/header/Alg/lz78.hpp
+# automatic
+# | := 
+# automatic
+# < := src/main/appliance/Alg/lz78.cpp
+# automatic
+# ^ := src/main/appliance/Alg/lz78.cpp src/main/header/Alg/lz78.hpp
+# automatic
+# ? := src/main/appliance/Alg/lz78.cpp src/main/header/Alg/lz78.hpp
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/19=5%
+#  recipe to execute (from 'src/main/make/rules.mk', line 16):
+	$(COMPIL_OBJECT_CODE_MAIN)
+
+# Not a target:
+.tex.dvi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(TEX) $<
+
+src/unit/header/Interface/init_unit.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/unit/header/Interface/init_unit.hpp'
+#  Last modified 2021-02-07 19:13:18.857767256
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+build/unit/Alg/lz78_unit.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.cpp.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.cpp) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.cpp:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+clean::
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 28):
+		$(eval OBJECT_DIRS := $(wildcard $(OBJECT_DIRS) $(TARGET)))
+		$(info Deleting all the directories and subfolders:)
+		$(info $(OBJECT_DIRS))
+		@echo
+		@echo Are you sure? \(Y/N\)
+		@read choice && \
+		if [[ "$$choice" = "y" ]] || [[ "$$choice" = "Y" ]]; then \
+		{ ( $(foreach dir, $(OBJECT_DIRS), rm --verbose --preserve-root --recursive --force "$(dir)"; ) ) && \
+			echo Cleaning successful.; } || \
+			$(call e_prev_cmd, Cleaning of some directory failed.) \
+		else \
+		echo No cleaning was performed.; \
+		fi
+
+# Not a target:
+.C.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.C) $(OUTPUT_OPTION) $<
+
+# Not a target:
+.texi:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+src/main/header/Alg/lz78.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/header/Alg/lz78.hpp'
+#  Last modified 2021-02-07 11:23:05.906019351
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+.txinfo:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+src/unit/header/Alg/lz78_unit.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/unit/header/Alg/lz78_unit.hpp'
+#  Last modified 2021-02-07 11:34:06.229398
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+.tex:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/main/Utils::
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 12):
+	@-mkdir --parents $@
+
+src/main/make/error-functions.mk:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/make/error-functions.mk'
+#  Last modified 2021-01-18 23:14:12.60105971
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+.txinfo.info:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(MAKEINFO) $(MAKEINFO_FLAGS) $< -o $@
+
+src/main/appliance/Interface/init.cpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/appliance/Interface/init.cpp'
+#  Last modified 2021-02-06 21:29:06.525758029
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+src/unit/appliance/Interface/init_unit.cpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/unit/appliance/Interface/init_unit.cpp'
+#  Last modified 2021-02-07 19:24:52.767129383
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+unit:: src/unit/appliance/unit_main.cpp src/unit/header/Alg/Alg_unit.hpp src/unit/header/Alg/lz78_unit.hpp src/unit/header/Interface/Interface_unit.hpp src/unit/header/Interface/init_unit.hpp src/unit/header/Utils/Utils_unit.hpp src/unit/header/Utils/error_unit.hpp src/unit/appliance/Alg/lz78_unit.cpp src/unit/appliance/Interface/init_unit.cpp src/unit/appliance/Utils/error_unit.cpp src/main/header/Alg/lz78.hpp src/main/header/Alg/Alg.hpp src/main/header/Interface/process_entries.hpp src/main/header/Interface/Interface.hpp src/main/header/Interface/init.hpp src/main/header/Utils/Utils.hpp src/main/header/Utils/error.hpp src/main/header/Utils/unit.hpp src/main/appliance/Alg/lz78.cpp src/main/appliance/Interface/init.cpp src/main/appliance/Utils/error.cpp src/main/appliance/Utils/unit.cpp build/unit/Alg build/unit/Interface build/unit/Utils build/main/Alg/lz78.o build/main/Interface/init.o build/main/Utils/error.o build/main/Utils/unit.o build/unit/Alg/lz78_unit.o build/unit/Interface/init_unit.o build/unit/Utils/error_unit.o
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/18=0%
+#  recipe to execute (from 'src/main/make/rules.mk', line 47):
+	$(UNIT_LINK_CODE)
+
+src/main/appliance/Alg/lz78.cpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/appliance/Alg/lz78.cpp'
+#  Last modified 2021-02-07 11:22:49.394134926
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+src/unit/appliance/Alg/lz78_unit.cpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/unit/appliance/Alg/lz78_unit.cpp'
+#  Last modified 2021-02-07 11:34:06.229398773
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+.sh:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	cat $< >$@ 
+	 chmod a+x $@
+
+# Not a target:
+build/main/Utils/unit.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.S.s:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(PREPROCESS.S) $< > $@
+
+# Not a target:
+.mod:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.mod) -o $@ -e $@ $^
+
+# Not a target:
+.mod.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.mod) -o $@ $<
+
+# Not a target:
+.F.f:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(PREPROCESS.F) $(OUTPUT_OPTION) $<
+
+src/main/header/Utils/unit.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/header/Utils/unit.hpp'
+#  Last modified 2021-02-07 19:25:35.251908339
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+src/main/header/Interface/process_entries.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/header/Interface/process_entries.hpp'
+#  Last modified 2021-01-31 00:00:13.555989272
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+.w:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+build/unit/Interface::
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  Last modified 2021-02-07 19:26:02.684410614
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := build/unit/Interface
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
+#  recipe to execute (from 'src/main/make/rules.mk', line 12):
+	@-mkdir --parents $@
+
+# Not a target:
+.S.o:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(COMPILE.S) -o $@ $<
+
+# Not a target:
+src/main/appliance/main.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+src/main/appliance/Utils/error.cpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/appliance/Utils/error.cpp'
+#  Last modified 2021-02-07 18:45:50.52271626
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+src/main/appliance/Utils/unit.cpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/appliance/Utils/unit.cpp'
+#  Last modified 2021-02-07 19:18:39.608179518
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+src/main/header/Interface/Interface.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/main/header/Interface/Interface.hpp'
+#  Last modified 2021-02-01 12:07:44.918007219
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+src/unit/header/Interface/Interface_unit.hpp:
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/unit/header/Interface/Interface_unit.hpp'
+#  Last modified 2021-02-07 15:51:59.947320828
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'src/main/make/rules.mk', line 59):
+	@echo Archive or Pattern "$@" not found!
+
+# Not a target:
+.F:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.F) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.web:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.sym:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+.f:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (built-in):
+	$(LINK.f) $^ $(LOADLIBES) $(LDLIBS) -o $@
+
+# Not a target:
+.info:
+#  Builtin rule
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=121/1024=12%, Rehash=0, Collisions=461/1486=31%
+# VPATH Search Paths
+
+vpath %.cpp src/main/appliance/Alg:src/main/appliance/Interface:src/main/appliance/Utils
+
+# 1 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 237 / storage = 3084 B / avg = 13 B
+# current buf: size = 8162 B / used = 3084 B / count = 237 / avg = 13 B
+
+# strcache performance: lookups = 466 / hit rate = 49%
+# hash-table stats:
+# Load=237/8192=3%, Rehash=0, Collisions=153/466=33%
+# Finished Make data base on Sun Feb  7 19:27:57 2021
+

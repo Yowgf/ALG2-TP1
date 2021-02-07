@@ -3,7 +3,7 @@
 # ==============================================================
 
 # Links objects. Put first to avoid errors with .DEFAULT_GOAL assignment.
-$(TARGET) : $(MAIN_FILE) $(HEADER_FILES) $(APPLIANCE_FILES) $(BUILD_MODS) $(OBJECT_FILES)
+$(TARGET) : $(TARGET_DEPENDENCIES)
 	$(info Linking code...)
 	$(LINK_CODE)
 
@@ -12,8 +12,11 @@ $(OBJECT_MOD_DIRS) ::
 	@-mkdir --parents $@
 
 # Compiles objects.
-$(BUILD)/%$(OBJECT_EXTENSION) :: $(APPLIANCE)/%$(APP_EXTENSION) $(HEADER)/%$(HEADER_EXTENSION)
-	$(COMPIL_OBJECT_CODE)
+$(BUILD_MAIN)/%$(OBJECT_EXTENSION) :: $(APPLIANCE_MAIN)/%$(APP_EXTENSION) $(HEADER_MAIN)/%$(HEADER_EXTENSION)
+	$(COMPIL_OBJECT_CODE_MAIN)
+
+$(BUILD_UNIT)/%$(OBJECT_EXTENSION) :: $(APPLIANCE_UNIT)/%$(APP_EXTENSION) $(HEADER_UNIT)/%$(HEADER_EXTENSION)
+	$(COMPIL_OBJECT_CODE_UNIT)
 
 # Deletes all the directories supposed to contain objects.
 .PHONY : clean unit test

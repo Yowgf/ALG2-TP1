@@ -47,10 +47,17 @@ error::error(const std::exception& e, const std::string t_type) : cur_e_msg(e.wh
   }
 }
 
+void error::update_error_code(int new_code)
+{
+  if (error_code < new_code) {
+    error_code = new_code;
+  }
+}
+  
 //:D
 [[noreturn]] void error::inst_term_error()
 {
-  error_code = 1;
+  update_error_code(1);
 
   msg_before = std::string("\n");
   msg = cur_e_msg;
@@ -63,7 +70,7 @@ error::error(const std::exception& e, const std::string t_type) : cur_e_msg(e.wh
 //:D
 void error::fatal_error()
 {
-	error_code = 2;
+  update_error_code(2);
 
   msg_before = std::string("\n");
   msg = cur_e_msg;
@@ -76,21 +83,21 @@ void error::fatal_error()
 //:D
 void error::not_fatal_error()
 {
-  error_code = 3;
+  update_error_code(3);
 
   msg_before = std::string(
-                           "\n Encountered not fatal error during execution:"
+                           "\nEncountered not fatal error during execution:"
                            "\n"
                            "\n")
     +=  std::string(10, '~')
     +=  "\n";
   msg = cur_e_msg;
-  msg_after = std::string(std::string(10, '~') += "\n");
+  msg_after = std::string(std::string("\n") += std::string(10, '~') += "\n");
   report();
 }
 
 void error::report() {
-  ss << "Error code: " << error_code << std::endl;
+  ss << "Error code: " << error_code << '\n';
   ss << msg_before;
   ss << cur_e_msg;
   ss << msg_after;

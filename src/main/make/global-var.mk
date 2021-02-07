@@ -9,34 +9,23 @@ FLAGS :=
 # Source directory
 SOURCE := 
 
-# ~SOURCE~ descendants
-# If you want to add more directories as children of ~SOURCE~,
-#   add them to this variable, then add the variable definitions
-#   by themselves.
-# For example:
-# ------------------------------------------------
-# SOURCE_VAL_NAMES := HEADER APPLIANCE THIRD-PARTY
-# HEADER := include
-# APPLIANCE := app
-# THIRD-PARTY := third-party
-# ------------------------------------------------
-SOURCE_VAL_NAMES :=
-
 # Source directory direct descendants
 SOURCE_MAIN := 
 SOURCE_UNIT := 
 
-SOURCE_MAIN_VAL_NAMES := 
-
 # Directory of header files
-HEADER      := 
+HEADER_MAIN    := 
 # Directory of appliance files (e.g. ~.cpp~)
-APPLIANCE   :=
+APPLIANCE_MAIN :=
 
-SOURCE_UNIT_VAL_NAMES := 
+HEADER_UNIT    := 
+APPLIANCE_UNIT :=
 
 # Directory of compiled files
-BUILD := 
+BUILD :=
+
+BUILD_MAIN :=
+BUILD_UNIT := 
 
 # Project's modules
 MODULES := Alg Interface Utils

@@ -6,7 +6,7 @@
 
 #include "Utils/unit.hpp"
 
-#include "Utils/error.hpp"
+#include <iostream>
 
 namespace Utils {
 
@@ -23,7 +23,10 @@ void unit::CHECK_FALSE(const std::string annotation, const bool t_stm)
 void unit::CHECK(const std::string annotation, const bool t_stm)
 {
   if (!t_stm) {
-    error(unit_test_failure{annotation}, "Not fatal");
+    std::cerr << "Check " << annotation << " unsuccessful.\n";
+  }
+  else {
+    std::cerr << "Check " << annotation << " successful.\n";
   }
 }
   
