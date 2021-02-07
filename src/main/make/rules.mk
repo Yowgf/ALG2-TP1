@@ -1,4 +1,4 @@
-# ~PROJECT~ project Makefile
+# ALG2-TP1 project Makefile
 # Rules definition Makefile
 # ==============================================================
 
@@ -16,26 +16,32 @@ $(BUILD)/%$(OBJECT_EXTENSION) :: $(APPLIANCE)/%$(APP_EXTENSION) $(HEADER)/%$(HEA
 	$(COMPIL_OBJECT_CODE)
 
 # Deletes all the directories supposed to contain objects.
-.PHONY : clean test
+.PHONY : clean unit test
 clean ::
 ifneq "$(origin OBJECT_DIRS)" "file"
 		$(info Variable "OBJECT_DIRS" used for "clean" left undefined.)
 		$(info Please check the file in $(GLOBAL_VARS))
 else
+		$(eval OBJECT_DIRS := $(wildcard $(OBJECT_DIRS) $(TARGET)))
+ifneq ($(strip $(OBJECT_DIRS)),)
 		$(info Deleting all the directories and subfolders:)
 		$(info $(OBJECT_DIRS))
 		@echo
 		@echo Are you sure? \(Y/N\)
 		@read choice && \
 		if [[ "$$choice" = "y" ]] || [[ "$$choice" = "Y" ]]; then \
-		{ rm --verbose --preserve-root $(TARGET) && \
-			rm --verbose --preserve-root --recursive $(OBJECT_DIRS) && \
+		{ ( $(foreach dir, $(OBJECT_DIRS), rm --verbose --preserve-root --recursive --force "$(dir)"; ) ) && \
 			echo Cleaning successful.; } || \
 			$(call e_prev_cmd, Cleaning of some directory failed.) \
 		else \
 		echo No cleaning was performed.; \
 		fi
 endif
+endif
+
+# Performs the various unit tests available
+unit :: $(UNIT_TARGET_DEPENDENCIES)
+	$(UNIT_LINK_CODE)
 
 # Tests the program against set of entries and expected outputs
 # Then measures times to local csv file

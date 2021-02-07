@@ -18,7 +18,7 @@ SHELL := /bin/bash
 # Auxiliary makefiles addresses
 ALL_FILES_VARS     := F_CUSTOM_FUNCTIONS F_GLOBAL_VARS F_VAR_EXPANSION \
                       F_RULES
-AUX_MAKE_DIR       := src/make
+AUX_MAKE_DIR       := src/main/make
 F_CUSTOM_FUNCTIONS := $(AUX_MAKE_DIR)/custom-functions.mk
 F_GLOBAL_VARS      := $(AUX_MAKE_DIR)/global-var.mk
 F_VAR_EXPANSION    := $(AUX_MAKE_DIR)/var-expansions.mk

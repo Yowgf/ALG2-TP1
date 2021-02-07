@@ -1,4 +1,4 @@
-# ~PROJECT~ project makefile
+# ALG2-TP1 project makefile
 # Custom LARGE PROCESSING functions
 # Prefix lp_
 #
@@ -10,8 +10,13 @@
 
 # Category: Variable handling
 # Description: Applies default value to variables. By default
-#              value, let it be understood DEFAULT_<VAR_NAME>
+#              value, let it be understood DEFAULT_<VAR_NAME>.
+# Parameter: A list containing the name of the variables
 # Returns: Nothing
-define lp_apply_default =
+define newline
 
+
+endef
+define lp_apply_defaults =
+$(eval $(foreach var, $(1), ifndef $(var)$(newline)$(var) = $(value DEFAULT_$(var))$(newline)endif$(newline)))
 endef

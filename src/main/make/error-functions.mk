@@ -1,4 +1,4 @@
-# ~PROJECT~ project Makefile
+# ALG2-TP1 project Makefile
 # Custom ERROR functions.
 # ==============================================================
 

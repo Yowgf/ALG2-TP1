@@ -1,23 +1,34 @@
-# ~PROJECT~ project Makefile
+# ALG2-TP1 project Makefile
 # Variable expansions Makefile
 # ==============================================================
 
 # List of all global variables that are expected to be
 #   customized according to the use of the user.
-GLOBAL_VAR_LIST := CXX FLAGS HEADER APPLIANCE BUILD \
-  MODULES HEADER_EXTENSION APP_EXTENSION OBJECT_EXTENSION \
-  EXECUTABLE_EXTENSION MAIN_FILE TARGET
+GLOBAL_VAR_LIST := CXX FLAGS SOURCE SOURCE_VAL_NAMES SOURCE_MAIN		 \
+  SOURCE_UNIT SOURCE_MAIN_VAL_NAMES HEADER APPLIANCE								 \
+  SOURCE_UNIT_VAL_NAMES BUILD MODULES HEADER_EXTENSION APP_EXTENSION \
+  OBJECT_EXTENSION EXECUTABLE_EXTENSION MAIN_FILE TARGET						 \
+  UNIT_MAIN_FILE UNIT_TARGET
 
 # Set defaults of some variables (format DEFAULT_<VAR_NAME>)
 DEFAULT_CXX   := g++
 DEFAULT_FLAGS := -std=c++11 -Wall
 
-DEFAULT_SOURCE           := src
-DEFAULT_SOURCE_VAL_NAMES := HEADER APPLIANCE
+DEFAULT_SOURCE := src
+
+DEFAULT_SOURCE_VAL_NAMES := SOURCE_MAIN SOURCE_UNIT
+
+DEFAULT_SOURCE_MAIN := main
+DEFAULT_SOURCE_UNIT := unit
+
+DEFAULT_SOURCE_MAIN_VAL_NAMES := HEADER APPLIANCE
 
 DEFAULT_HEADER    := header
 DEFAULT_APPLIANCE := appliance
-DEFAULT_BUILD     := build
+
+DEFAULT_SOURCE_UNIT_VAL_NAMES = $(MODULES)
+
+DEFAULT_BUILD := build
 
 DEFAULT_MODULES :=
 
@@ -26,8 +37,11 @@ DEFAULT_APP_EXTENSION        := cpp
 DEFAULT_OBJECT_EXTENSION     := o
 DEFAULT_EXECUTABLE_EXTENSION := exe
 
-DEFAULT_MAIN_FILE := $(SOURCE)/$(APPLIANCE)/main.$(APP_EXTENSION)
-DEFAULT_TARGET    := $(BUILD)/main.$(EXECUTABLE_EXTENSION)
+DEFAULT_MAIN_FILE = $(APPLIANCE)/main.$(APP_EXTENSION)
+DEFAULT_TARGET    = $(BUILD)/main.$(EXECUTABLE_EXTENSION)
+
+DEFAULT_UNIT_MAIN_FILE = $(SOURCE_UNIT)/unit_main.cpp
+DEFAULT_UNIT_TARGET    = $(BUILD)/unit_main.exe
 
 # This call only affects those variables that have a default
 #   value defined.
@@ -55,10 +69,14 @@ define C_NL :=
 
 endef
 
-# Adding prefix to directories inside ~$(SOURCE)~
+# Add prefix to directories inside ~$(SOURCE)~
+override SOURCE_MAIN := $(SOURCE)/$(SOURCE_MAIN)
+override SOURCE_UNIT := $(SOURCE)/$(SOURCE_UNIT)
+
+# Add prefix to directories inside ~$(SOURCE_MAIN)~
 $(eval \
-$(foreach src_dir, $(SOURCE_VAL_NAMES),\
-override $(src_dir) := $(SOURCE)/$($(src_dir))$(C_NL)) \
+$(foreach src_dir, $(SOURCE_MAIN_VAL_NAMES),\
+override $(src_dir) := $(SOURCE_MAIN)/$($(src_dir))$(C_NL)) \
 )
 
 vpath %.$(APP_EXTENSION) $(patsubst %, $(APPLIANCE)/%, $(MODULES))
@@ -84,3 +102,14 @@ LINK_CODE = $(CXX) $(FLAGS) -I $(HEADER) $(OBJECT_FILES) $(MAIN_FILE) -o $@
 #-- Otherwise it won't recognize the directory's existance.
 OBJECT_MOD_DIRS  := $(foreach mod, $(MODULES), $(patsubst %, %/$(mod), $(OBJECT_DIRS)))
 BUILD_MODS       := $(patsubst %, $(BUILD)/%, $(MODULES))
+
+TARGET_DEPENDENCIES := $(MAIN_FILE) $(HEADER_FILES) $(APPLIANCE_FILES) $(BUILD_MODS) $(OBJECT_FILES)
+
+# Regarding unit rule
+UNIT_FILES := $(wildcard $(patsubst %, $(SOURCE_UNIT)/%/*.$(APP_EXTENSION), $(MODULES)))
+
+$(info $(UNIT_FILES))
+
+UNIT_LINK_CODE = $(CXX) $(FLAGS) -I $(HEADER) $(OBJECT_FILES) $(UNIT_FILES) $(UNIT_MAIN_FILE) -o $(UNIT_TARGET)
+
+UNIT_TARGET_DEPENDENCIES := $(UNIT_MAIN_FILE) $(UNIT_FILES) $(HEADER_FILES) $(APPLIANCE_FILES) $(BUILD_MODS) $(OBJECT_FILES)
