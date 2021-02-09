@@ -7,6 +7,7 @@
 #ifndef DS_UNIT_H
 #define DS_UNIT_H 1
 
+#include "DS/DS.hpp"
 #include "DS/ctrie_unit.hpp"
 
 #endif

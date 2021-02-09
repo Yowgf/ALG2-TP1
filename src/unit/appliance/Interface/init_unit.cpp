@@ -44,7 +44,7 @@ init_unit::~init_unit()
       delete[] prog_argv[i];
     }
   }
-  delete prog_argv;
+  delete[] prog_argv;
 }
   
 void init_unit::make_argv()

@@ -15,6 +15,7 @@
 #include <string>
 
 #define LOG(str) std::cerr << str << '\n';
+#define LOGA(attname, att) std::cerr << attname << ": " << att << '\n';
 
 namespace Utils {
   

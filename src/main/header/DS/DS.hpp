@@ -10,5 +10,6 @@
 #define DS_H 1
 
 #include "DS/ctrie.hpp"
+#include "DS/node.hpp"
 
 #endif

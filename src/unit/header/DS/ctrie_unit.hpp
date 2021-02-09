@@ -31,6 +31,7 @@ private:
   void check_some_nodes_pivot_2_equal();
   void check_some_nodes_pivot_3_diff();
   void check_some_nodes_pivot_8_diff();
+  void check_some_nodes_pivot_15_diff();
   void check_some_nodes_pivot_33_diff();
 };
 

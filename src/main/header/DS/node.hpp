@@ -4,7 +4,9 @@
 // =============================================================
 //
 // Description:
-// This class implements a simple node
+// This class implements a simple node, that is tied to a static
+//   map that associates string ids with actual strings, for the
+//   the sake of efficiency.
 ////////////////////////////////////////////////////////////////
 
 #ifndef NODE_H
@@ -15,20 +17,34 @@
 namespace DS {
 
 class node;
-typedef std::unordered_map<char, node*>  umap;
+typedef std::unordered_map<char, node*>  umap;  
   
 class node {
 public:
-  node(const char* p_value, node* const p_next) : node(std::string(p_value), p_next) {}
-  node(const std::string p_value, node* const p_next);
+  // Leaf
+  node(const unsigned id, const unsigned begin, const unsigned len);
+  node(const unsigned id, const unsigned begin, const unsigned len, const char c, node* const next);
   ~node();
+
+  const unsigned get_str_id() noexcept(true) { return str_id; }  
+  unsigned get_begin() noexcept(true) { return str_begin; }
+  unsigned get_len() noexcept(true) { return str_len; }
   
-  std::string* get_value() noexcept(true) { return &value; }
-  std::string& get_valuer() noexcept(true) { return value; }
-  umap& get_next() noexcept(true) { return next; }
+  umap* get_next() noexcept(true) { return next; }
+  umap* get_fresh();
+  void insert(std::pair<char, node*> cn);
+  bool empty() noexcept(true) { return next == nullptr || next->empty(); }
+  node* at(const char c) noexcept(false);
+
 private:
-  std::string value;
-  umap next;
+  // Three unsigned integers to reference which string is kept in the node, for
+  //  memory efficiency.
+  const unsigned str_id; // Never changes
+  unsigned str_begin;
+  unsigned str_len;
+  
+  umap* next;
+
 };
 
 }
