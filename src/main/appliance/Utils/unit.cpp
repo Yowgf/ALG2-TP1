@@ -10,6 +10,20 @@
 
 namespace Utils {
 
+void unit::print_start(const char* annotation)
+{
+  std::cerr << '\n'
+            << std::string(10, '~') << '\n'
+            << "Starting " << annotation << " tests\n\n";
+}
+
+void unit::print_end(const char* annotation)
+{
+  std::cerr << '\n'
+            << "Ended " << annotation << " tests\n"
+            << std::string(10, '~') << '\n';
+}
+  
 void unit::CHECK_TRUE(const std::string annotation, const bool t_stm)
 {
   CHECK(annotation, t_stm);

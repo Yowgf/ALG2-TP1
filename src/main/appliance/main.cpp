@@ -11,6 +11,7 @@
 ////////////////////////////////////////////////////////////////
 
 #include "Alg/Alg.hpp"
+#include "DS/DS.hpp"
 #include "Interface/Interface.hpp"
 #include "Utils/Utils.hpp"
 

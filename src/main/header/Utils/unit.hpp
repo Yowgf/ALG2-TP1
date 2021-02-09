@@ -44,7 +44,10 @@ private:
 
 class unit {
 public:
-  // Routines useful for unit testing (e.g. check_true, check_throws, etc).
+  // Useful for startup and finish of unit testing classes
+  static void print_start(const char* annotation);
+  static void print_end(const char* annotation);
+  
   static void CHECK_TRUE(const std::string annotation, const bool t_stm);
   static void CHECK_FALSE(const std::string annotation, const bool t_stm);
   

@@ -14,8 +14,10 @@
 #include <stdexcept>
 #include <string>
 
-namespace Utils {
+#define LOG(str) std::cerr << str << '\n';
 
+namespace Utils {
+  
 class graceful_terminate{};
   
 class error {

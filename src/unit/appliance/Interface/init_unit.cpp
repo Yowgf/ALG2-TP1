@@ -8,7 +8,7 @@
 
 #include "Utils/Utils.hpp"
 
-#include <cstdlib>
+#include <cstdio>
 #include <iostream>
 
 #include <stdexcept>
@@ -22,31 +22,29 @@ init_unit::init_unit()
   arg_list = {&arg1, &arg2, &arg3, &arg4, &arg5};
 
   // Allocate prog_argv
-  prog_argv = (char**) malloc(sizeof(char*) * kmax_argc);
+  prog_argv = new char*[kmax_argc];
   for (unsigned i = 0; i < kmax_argc; ++i) {
-    prog_argv[i] = (char*) malloc(sizeof(char) * kmax_size_arg);
+    prog_argv[i] = new char[kmax_size_arg];
   }
 
+  Utils::unit::print_start("init_unit");
+  
   // Call the checks to be made
-  std::cerr << '\n'
-            << std::string(10, '~') << '\n'
-            << "Starting init_unit tests\n\n";
   check_no_args();
   check_3_args();
   check_5_args();
-  std::cerr << '\n'
-            << "Ended init_unit tests\n"
-            << std::string(10, '~') << '\n';
+
+  Utils::unit::print_end("init_unit");
 }
 
 init_unit::~init_unit()
 {
   for (unsigned i = 0; i < kmax_argc; ++i) {
     if (prog_argv != nullptr) {
-      free(prog_argv[i]);
+      delete[] prog_argv[i];
     }
   }
-  free(prog_argv);
+  delete prog_argv;
 }
   
 void init_unit::make_argv()
@@ -87,11 +85,17 @@ void init_unit::check_5_args()
   
   arg1 = "program";
   arg2 = "-c";
-  arg3 = "in.txt";
+  arg3 = "tmpin.txt";
   arg4 = "-o";
-  arg5 = "out.lz78";
+  arg5 = "tmpout.lz78";
   make_argv();
 
+  // Make sure that these files exist
+  FILE* tmpfile1 = fopen(arg3.c_str(), "a");
+  fclose(tmpfile1);
+  FILE* tmpfile2 = fopen(arg5.c_str(), "a");
+  fclose(tmpfile2);
+  
   CHECK_NO_THROW("check_5_args", emulate_init, prog_argc, prog_argv);
 }
 

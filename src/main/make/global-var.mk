@@ -28,7 +28,7 @@ BUILD_MAIN :=
 BUILD_UNIT := 
 
 # Project's modules
-MODULES := Alg Interface Utils
+MODULES := Alg DS Interface Utils
 
 # Files extensions
 HEADER_EXTENSION     := 
