@@ -20,7 +20,6 @@ ctrie_unit::ctrie_unit()
 {
   Utils::unit::print_start("ctrie_unit");
 
-  #if 0
   check_empty();
   
   check_some_nodes_insertion_1();
@@ -31,14 +30,9 @@ ctrie_unit::ctrie_unit()
   check_some_nodes_pivot_1();
   check_some_nodes_pivot_2_equal();
   check_some_nodes_pivot_3_diff();
-  #endif
-  
   check_some_nodes_pivot_8_diff();
-  
-  #if 0
   check_some_nodes_pivot_15_diff();
   check_some_nodes_pivot_33_diff();
-  #endif
   
   Utils::unit::print_end("ctrie_unit");
 }

@@ -57,7 +57,7 @@ void ctrie::rec_destructor(node* cur_node)
   }
 }
   
-void ctrie::insert(const char c) noexcept(false)
+unsigned ctrie::insert(const char c) noexcept(false)
 {
   if (pivot_node == nullptr) {
     throw std::logic_error("pivot_node nullptr");
@@ -69,6 +69,8 @@ void ctrie::insert(const char c) noexcept(false)
   std::cerr << "Inserting character " << c << '\n';
   #endif
 
+  unsigned prev_cpos = pivot_cpos; // For use in lz78
+  
   // Case root
   if (pivot_node == root_node) {
     insert_root(c);
@@ -82,6 +84,9 @@ void ctrie::insert(const char c) noexcept(false)
   else { // Internal node
     insert_internal(c);
   }
+
+  return prev_cpos;
+  
   #if CTRIE_DEBUG == 1
   std::cerr << "Leaving insert.\n";
   #endif
@@ -93,7 +98,7 @@ node* ctrie::create_new_leaf(const char c)
   LOG("Entering create_new_leaf");
   #endif
   
-  // create new string in map using just the character provided
+  // create new string from scratch in map using just the character provided
   std::string* new_str = new std::string{c};
   
   strmap->insert( {len, new_str} );
@@ -114,17 +119,14 @@ void ctrie::insert_root(const char c)
 void ctrie::insert_new_leaf(const char c)
 {
   #if CTRIE_DEBUG == 1
-  LOG("In new leaf");
+  LOG("Entering insert_new_leaf");
   #endif
   if (c != ' ') {
     pivot_str->push_back(c);
-  #if CTRIE_DEBUG == 1
-    LOGA("Current pivot_str", *pivot_str);
-  #endif
     pivot_cpos += 1;
     pivot_len += 1;
   }
-  else {
+  else {    
     pivot_str->push_back('\0');
     pivot_update(root_node, 0); // Go back to the beggining
     new_leaf = false;
@@ -247,8 +249,6 @@ void ctrie::branch_fix(node* right_child)
   #if CTRIE_DEBUG == 1
   LOG("Entering branch_fix");
   #endif
-  // Fix pivot_str
-  *pivot_str = pivot_str->substr(pivot_begin, pivot_cpos);
 
   pivot_update(right_child, 1); // Forward to new right child
   new_leaf = true;
@@ -256,9 +256,6 @@ void ctrie::branch_fix(node* right_child)
   
 void ctrie::pivot_update(node* const new_node, const unsigned pos)
 {
-  #if CTRIE_DEBUG == 1
-  LOG("Entering pivot_update");
-  #endif
   pivot_node = new_node;
   
   pivot_str_id = pivot_node->get_str_id();

@@ -35,7 +35,9 @@ init::init(int argc, char** argv)
   }
 
   try {
+    #if 0
     Alg::lz78{in_file, out_file, is_comp_decomp};
+    #endif
   }
   catch (const std::exception& e) {
     // Exceptions not handled inside the algorithm are obviously fatal errors

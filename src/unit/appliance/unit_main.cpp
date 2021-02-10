@@ -20,6 +20,7 @@ int main() {
   try {
     init_unit{};
     ctrie_unit{};
+    lz78_unit{};
   }
   catch (const Utils::graceful_terminate& e) {
     return Utils::error::error_code;

@@ -30,7 +30,7 @@ public:
   ctrie();
   ~ctrie();
 
-  void insert(const char c) noexcept(false);
+  unsigned insert(const char c) noexcept(false);
   unsigned get_len() noexcept(true) { return len; }
   node* get_pivot() noexcept(true) { return pivot_node; }
 

@@ -28,12 +28,12 @@ else
 		$(eval OBJECT_DIRS := $(wildcard $(OBJECT_DIRS) $(TARGET)))
 ifneq ($(strip $(OBJECT_DIRS)),)
 		$(info Deleting all the directories and subfolders:)
-		$(info $(OBJECT_DIRS))
+		$(info $(BUILD))
 		@echo
 		@echo Are you sure? \(Y/N\)
 		@read choice && \
 		if [[ "$$choice" = "y" ]] || [[ "$$choice" = "Y" ]]; then \
-		{ ( $(foreach dir, $(OBJECT_DIRS), rm --verbose --preserve-root --recursive --force "$(dir)"; ) ) && \
+		{ ( $(foreach dir, $(BUILD), rm --verbose --preserve-root --recursive --force "$(dir)"; ) ) && \
 			echo Cleaning successful.; } || \
 			$(call e_prev_cmd, Cleaning of some directory failed.) \
 		else \
